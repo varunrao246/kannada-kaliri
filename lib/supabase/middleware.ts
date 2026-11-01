@@ -29,6 +29,12 @@ export async function updateSession(request: NextRequest) {
     return redirectResponse;
   };
 
+  // The OAuth callback route handles code exchange and session establishment;
+  // it must never be intercepted or altered by session refresh middleware.
+  if (pathname.startsWith('/auth/callback')) {
+    return supabaseResponse;
+  }
+
   // If Supabase is not configured yet, prevent access to protected routes
   if (!isSupabaseConfigured()) {
     if (pathname.startsWith('/dashboard') || pathname.startsWith('/onboarding')) {

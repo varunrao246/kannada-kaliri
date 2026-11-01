@@ -16,6 +16,12 @@ export async function GET(request: Request) {
     ? `https://${forwardedHost}`
     : requestUrl.origin;
 
+  const errorParam = requestUrl.searchParams.get('error_description') || requestUrl.searchParams.get('error');
+  if (errorParam) {
+    console.error('OAuth provider error in callback:', errorParam);
+    return NextResponse.redirect(`${baseOrigin}/login?error=${encodeURIComponent(errorParam)}`);
+  }
+
   if (code) {
     const supabase = await createClient();
     if (supabase) {
