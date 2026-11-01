@@ -1,186 +1,233 @@
-# KANNADA FOR EVERYONE (ಕನ್ನಡ ಕಲಿರಿ)
-> *"Learn the language. Experience the culture."*
-> *"Kannada is more than a language. It's a connection."*
+# 💛❤️ ಕನ್ನಡ ಕಲಿರಿ — Kannada Kaliri
+### *Kannada for Everyone: The Intelligent, Cultural Bridge to Karnataka*
 
-An AI-powered multilingual EdTech platform engineered specifically for non-Kannada speakers living, working, and travelling in Karnataka to learn, understand, and speak Kannada with authentic cultural confidence.
+<div align="center">
 
----
+[![Live Demo](https://img.shields.io/badge/Live_Demo-kannada--kaliri.vercel.app-D5A64A?style=for-the-badge&logo=vercel&logoColor=white)](https://kannada-kaliri.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.4.3-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-SSR_Auth_%26_Postgres-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4_Turbopack-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-## 🏛️ Milestone 01: Premium Landing Page + Supabase Google Authentication
+**[🌐 Experience the Live Application](https://kannada-kaliri.vercel.app/)** • **[📖 Curriculum](#-curriculum--pedagogical-architecture)** • **[🎙️ Voice & AI](#-ai-guru--voice-intelligence-engine)** • **[🏛️ Architecture](#-system-architecture)**
 
-### 1. Technology Architecture
-- **Framework:** Next.js (App Router, Turbopack, React 19)
-- **Language:** Strict TypeScript
-- **Styling:** Tailwind CSS v4 with custom Mysore Royal theme design tokens
-- **Typography:** 
-  - `Cinzel` (Royal Mysore Serif headlines)
-  - `Manrope` (Clean editorial body typography)
-  - `Noto Sans Kannada` (Authentic Kannada font rendering)
-- **Motion & Micro-interactions:** Framer Motion (respects `prefers-reduced-motion`)
-- **Icons:** Lucide React
-- **Authentication Engine:** Supabase Authentication (`@supabase/supabase-js`, `@supabase/ssr`)
-- **Route Session Management:** Next.js Server-side code exchange callback and edge proxy session validation
+</div>
 
 ---
 
-## 🎨 Visual Identity & Color Palette
-
-- **Royal Navy:** `#101D36` (Primary canvas & luxury backdrop)
-- **Royal Navy Dark:** `#0A1222` (Deep contrast layers)
-- **Mysore Gold:** `#D5A64A` (Primary cultural accent & illuminated borders)
-- **Warm Ivory:** `#F8F5EE` (Primary readable typography)
-- **Heritage Cream:** `#EDE5D6` (Secondary text & editorial metadata)
-- **Charcoal:** `#242424` (Deep neutral)
+> ### 🌿 The Vision
+> **Kannada for everyone: develop an interactive platform that helps non-Kannada speakers learn practical Kannada through everyday conversation situation vocabulary and guided practice.**
+> 
+> *Over 15 million people have moved to Bengaluru and Karnataka for technology, research, entrepreneurship, and education. While English works in tech parks, true belonging and warmth happen in everyday life — with auto drivers, darshini staff, local markets, neighbors, and coworkers. Kannada Kaliri transforms learning from rote grammar memorization into authentic, joyful cultural immersion.*
 
 ---
 
-## 🚀 Key Features Implemented
+## 🌟 Why Kannada Kaliri Stands Apart
 
-### 1. Cinematic Hero Section
-- High-resolution Sony A7 IV photograph of **Mysore Palace illuminated at night** (`public/images/mysore-palace.jpg`).
-- Slow cinematic background zoom animation.
-- Floating golden ambient particles and decorative Kannada characters (`ಅ`, `ಆ`, `ಕ`, `ಸ್ವಾಗತ`, `ನಮಸ್ಕಾರ`, `ಳ`, `ಜ್ಞ`).
-- Primary CTA: **"Start Learning Kannada"** (Navigates to `/signup`).
-- Secondary CTA: **"Explore the Experience"** (Smooth scrolls to features).
-- Subtle animated scroll indicator.
-
-### 2. Sticky Glassmorphism Navigation Bar
-- Transparent over hero, transitions to royal navy blur on scroll (`scrollY > 40`).
-- Responsive mobile drawer menu with touch-friendly navigation.
-- Dynamic session detection showing "Sign In / Get Started" for guests and "Dashboard / Sign Out" for authenticated learners.
-
-### 3. Editorial Landing Page Sections
-- **Section A — Why Learn Kannada?**: "Belong wherever you go." Explaining community communication, daily errand navigation, workplace relationships, and cultural grounding, with classical antiquity statistics (2,000+ years, 50M+ speakers, 8 Jnanpith awards).
-- **Section B — Three Learning Pillars**: 
-  1. *Learn Kannada* (Foundational phonetics, vocabulary & syntax)
-  2. *Speak Kannada* (AI-powered voice tutor with pronunciation feedback)
-  3. *Experience Kannada* (Real-world Bangalore simulations: auto rickshaws, Darshini restaurants, hospitals, office conversations)
-  Interactive interactive tabs with real spoken Kannada phrase breakdowns.
-- **Section C — Cultural Heritage**: Highlighting Mysore Palace (Amba Vilas), Hampi (Vijayanagara Empire, UNESCO World Heritage), and Classical Kannada linguistic heritage (Halmidi 450 CE, Vachana literature).
-- **Section D — How It Works**: 4-step progressive pathway from native language selection to fluent everyday conversations.
-- **Section E — Final CTA**: "Your first Kannada conversation starts here."
-- **Section F — Comprehensive Footer**: Brand identity, quick navigation, legal links, and Bangalore craftsmanship attribution.
-
-### 4. Supabase Authentication System
-- **Real Supabase Client & Server Architecture**:
-  - `lib/supabase/client.ts` (Browser client with configuration check)
-  - `lib/supabase/server.ts` (Server client with cookie storage handling)
-  - `lib/supabase/middleware.ts` (Session validation and route protection)
-  - `proxy.ts` (Next.js proxy matcher)
-- **Split-Screen `/login` & `/signup` Layouts**:
-  - Left panel: Mysore Palace backdrop with royal navy gradient overlay and cultural manifesto.
-  - Right panel: Modern glassmorphic form with real validation, password visibility toggles, strength indicators, and Google OAuth buttons.
-- **Genuine Google OAuth**:
-  - Uses `supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: ... } })`.
-  - Server-side code exchange route at `app/auth/callback/route.ts`.
-  - Graceful configuration alert if Supabase credentials are not yet supplied, without crashing or fake success.
-- **Protected Learner Dashboard**:
-  - Route: `/dashboard`
-  - Retrieves authenticated user profile, avatar, email, and authentication provider.
-  - Sign-out capability that clears sessions and redirects to home.
-  - Preview roadmap for upcoming Milestones 02 & 03.
-
----
-
-## 🛠️ Project Structure
+Unlike generic flashcard apps that teach isolated words or dry dictionary rules, **Kannada Kaliri (ಕನ್ನಡ ಕಲಿರಿ)** is purpose-built around **contextual fluency, speech confidence, and cultural empathy**:
 
 ```
-├── app/
-│   ├── auth/
-│   │   └── callback/
-│   │       └── route.ts         # Supabase OAuth server-side code exchange
-│   ├── dashboard/
-│   │   └── page.tsx             # Authenticated learner portal
-│   ├── login/
-│   │   └── page.tsx             # Split-screen login page
-│   ├── signup/
-│   │   └── page.tsx             # Split-screen registration page
-│   ├── globals.css              # Custom design tokens, glassmorphism & gold glows
-│   ├── layout.tsx               # Root layout with Cinzel, Manrope & Noto Sans Kannada fonts
-│   └── page.tsx                 # Full landing page assembly
-├── components/
-│   ├── auth/
-│   │   ├── GoogleSignIn.tsx     # Google OAuth trigger with config awareness
-│   │   ├── LoginForm.tsx        # Email/password login with reset feedback
-│   │   └── SignupForm.tsx       # Registration form with password strength bar
-│   ├── landing/
-│   │   ├── CulturalHeritage.tsx # Mysore Palace & Hampi architectural showcase
-│   │   ├── FinalCTA.tsx         # Conversion section
-│   │   ├── Hero.tsx             # Full-screen cinematic hero with Mysore Palace
-│   │   ├── HowItWorks.tsx       # 4-step learning flow
-│   │   ├── LearningPillars.tsx  # Learn, Speak, Experience interactive tabs
-│   │   └── WhyKannada.tsx       # Cultural belonging and statistics
-│   └── layout/
-│       ├── Footer.tsx           # Cultural footer & navigation
-│       └── Navbar.tsx           # Dynamic glassmorphic navbar
-├── lib/
-│   └── supabase/
-│       ├── client.ts            # Browser Supabase client
-│       ├── middleware.ts        # Session refresh & protected route logic
-│       └── server.ts            # Server-side Supabase client
-├── public/
-│   └── images/
-│       └── mysore-palace.jpg    # Authentic 2560px illuminated Mysore Palace night image
-├── types/
-│   └── index.ts                 # TypeScript interfaces
-├── next.config.ts               # Next.js configuration & image domains
-├── proxy.ts                     # Next.js proxy edge handler
-└── package.json
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │                     KANNADA KALIRI LEARNING EXPERIENCE                      │
+ ├───────────────────┬───────────────────┬───────────────────┬─────────────────┤
+ │  🎙️ Voice & Audio │  🎭 Real Scenarios│  🤖 AI Guru Tutor │  🏆 Mysore Glory│
+ │   Speech AI with  │ Auto bargaining,  │  Conversational   │  Streaks, XP,   │
+ │   waveform visual │ darshini coffee,  │  Gemini partner   │  badges, and    │
+ │   & male/female   │ BMTC transit,     │  with live script │  real community │
+ │   audio clips     │ and local markets │  & transliteration│  leaderboards   │
+ └───────────────────┴───────────────────┴───────────────────┴─────────────────┘
 ```
 
 ---
 
-## ⚙️ Environment Configuration
+## 🚀 Core Platform Features
 
-Create a `.env.local` file in the project root:
+### 1. 🎭 Interactive Real-World Scenario Simulator
+Practice life in Karnataka with zero anxiety through rich interactive simulations:
+- **🛺 Auto Rickshaw Negotiation:** Meter-rate discussions, destination requests (*"Indiranagar 100 Feet Road ge banni"*), and polite refusals.
+- **☕ Darshini Tiffin & Filter Coffee Ordering:** Rapid breakfast interactions (*"Ondu Masala Dose, ondu Filter Coffee bisi-bisi kodi"*).
+- **🚌 BMTC Bus Commuting:** Stage stops, ticket purchases, change exchange, and stop inquiries.
+- **🥬 Local Vegetable Market (Santhe):** Fresh produce bargaining, weight inquiries, and payment via UPI.
+- **💼 Tech Workplace Chit-Chat:** Friendly Kannada banter with colleagues during tea breaks.
+- **🏥 Healthcare & Clinic Consultation:** Describing symptoms and understanding doctor advice clearly.
 
+### 2. 🤖 AI Guru — 24/7 Conversational AI Companion
+- Powered by high-speed generative AI with strict pedagogical guardrails.
+- Explains grammatical structures in your native language (English, Hindi, Telugu, Tamil, or Malayalam).
+- Provides trilingual representations for every response: **Kannada Script**, **English Transliteration**, and **Contextual Meaning**.
+- Respects cultural etiquette: clarifies nuances between informal (*neenu*) and respectful formal (*neevu*).
+
+### 3. 🎙️ High-Fidelity Voice AI & Audio Pronunciation
+- **Dual Pronunciation Cadence:** Toggle between **Normal** spoken speed and **Slow** instructional speed to grasp subtle retroflex vowels (*ಳ vs ಲ*, *ಣ vs ನ*).
+- **Dual Voice Modulation:** Experience authentic masculine and feminine native vocal inflections.
+- **Speech-to-Text (STT) Analysis:** Evaluates spoken attempts directly in the browser with live visual waveform meters and phoneme accuracy feedback.
+
+### 4. 📚 CEFR-Aligned A1/A2 Structured Curriculum
+- **Module 01: The Sound of Kannada (ಧ್ವನಿ & ಅಕ್ಷರ):** Vowels (ಸ್ವರಗಳು), Consonants (ವ್ಯಂಜನಗಳು), and phonetics.
+- **Module 02: Essential Survival Vocabulary (ಮೂಲ ಪದಕೋಶ):** Numbers, greetings, pronouns, and direction indicators (*ಇಲ್ಲಿ - illi*, *ಅಲ್ಲಿ - alli*).
+- **Module 03: Sentence Building & Everyday Grammar (ವಾಕ್ಯ ರಚನೆ):** Tenses, postpositions, and question framing (*ಎಲ್ಲಿ, ಹೇಗೆ, ಎಷ್ಟು, ಯಾವಾಗ*).
+- **Module 04: Cultural Nuances & Polite Forms (ಸಂಸ್ಕೃತಿ & ಗೌರವ):** Honorifics, festival greetings, and colloquial conversational shortcuts.
+
+### 5. 🏆 Gamification & Cultural Achievements
+- **Mysore Royal Aesthetic:** Inspired by the golden architecture of Mysore Palace (*ಅಂಬಾ ವಿಲಾಸ*) and the heritage of Karnataka.
+- **Cultural Badges:** Unlock achievements like *ಕನ್ನಡ ಕಲಿ (Kannada Learner)*, *ಮೈಸೂರು ರತ್ನ (Mysore Jewel)*, and *ಕಾವೇರಿ ತೀರ (Cauvery Traveler)*.
+- **Continuous Learning Streaks:** Daily challenges and community leaderboards to maintain consistency.
+
+### 6. 🛡️ Executive Learning Analytics & Admin Dashboard
+- Live learner telemetry, module completion rates, and aggregate engagement trends.
+- Real-time AI and voice service health telemetry with sub-second error-budget tracking.
+- Protected by server-enforced role-based access control (RBAC).
+
+---
+
+## 🏛️ System Architecture
+
+```mermaid
+flowchart TD
+    User["Learner / User Browser"]
+    
+    subgraph Frontend ["Next.js 16 App Router (React 19 & Turbopack)"]
+        Landing["Cultural Landing Page\n(Mysore Royal Theme)"]
+        AuthUI["Google OAuth & Email Auth\n(@supabase/ssr Singleton)"]
+        Dashboard["Learner Hub & Analytics"]
+        Simulator["Scenario Simulator\n(Audio & Chat Engine)"]
+        AIGuru["AI Guru Tutor Interface"]
+        AdminUI["Admin & Health Center"]
+    end
+
+    subgraph SecurityMiddleware ["Edge Security & Session Proxy"]
+        Proxy["proxy.ts & middleware.ts"]
+        RateLimiter["Sliding Window Rate Limiter"]
+        URLSanitizer["Open Redirect Shield"]
+        CallbackBypass["/auth/callback Safe Pass"]
+    end
+
+    subgraph BackendServices ["Backend Route Handlers & AI APIs"]
+        OAuthRoute["app/auth/callback/route.ts\n(PKCE Code Exchange)"]
+        GuruAPI["/api/guru/chat\n(Prompt Injection Guard)"]
+        SpeechAPI["/api/speech/synthesize & transcribe\n(Native WAV & Audio Validator)"]
+        ScenarioAPI["/api/scenarios/chat"]
+    end
+
+    subgraph ExternalServices ["External Engines & Persistence"]
+        SupabaseDB[("Supabase PostgreSQL\nRow Level Security (RLS)")]
+        GeminiAI["Google Gemini 2.5 Flash\n(Pedagogical AI Engine)"]
+        GnaniVoice["Voice AI Engine\n(Kannada STT & TTS)"]
+    end
+
+    User --> Landing
+    User --> AuthUI
+    User --> Simulator
+    User --> AIGuru
+    User --> AdminUI
+
+    AuthUI --> Proxy
+    Proxy --> SecurityMiddleware
+    SecurityMiddleware --> OAuthRoute
+    SecurityMiddleware --> GuruAPI
+    SecurityMiddleware --> SpeechAPI
+
+    OAuthRoute --> SupabaseDB
+    GuruAPI --> GeminiAI
+    SpeechAPI --> GnaniVoice
+    Simulator --> SupabaseDB
+```
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| **Framework** | [Next.js 16.4](https://nextjs.org/) (App Router, Turbopack, React 19 Server Components) |
+| **Language** | Strict [TypeScript 5](https://www.typescriptlang.org/) |
+| **Styling & Theme** | [Tailwind CSS v4](https://tailwindcss.com/) with Mysore Royal Gold (`#D5A64A`) & Deep Navy (`#101D36`) |
+| **Typography** | `Cinzel` (Royal Serif), `Manrope` (Editorial Sans), and `Noto Sans Kannada` |
+| **Authentication** | [Supabase SSR](https://supabase.com/docs/guides/auth/server-side/nextjs) with PKCE OAuth & Cookie Session Sync |
+| **Database & Security** | [PostgreSQL](https://www.postgresql.org/) with Row Level Security (RLS) & hardened `search_path` |
+| **Generative AI** | [Google Gemini 2.5](https://deepmind.google/technologies/gemini/) with multilingual instruction tuning |
+| **Voice Intelligence** | Dual-speed Kannada Text-to-Speech (TTS) & Speech-to-Text (STT) with native Web Audio analyzers |
+| **Hosting & CI/CD** | [Vercel](https://vercel.com/) with global edge routing |
+
+---
+
+## ⚡ Getting Started Locally
+
+### 1. Clone the Repository
 ```bash
-# Supabase Authentication & PostgreSQL Credentials
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-or-publishable-key-here
+git clone https://github.com/varunrao246/kannada-kaliri.git
+cd kannada-kaliri
 ```
 
-### Setting up Google OAuth in Supabase:
-1. In your **Supabase Dashboard**, navigate to **Authentication** > **Providers** > **Google**.
-2. Enable Google provider and paste your **Client ID** and **Client Secret** from the [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
-3. In Google Cloud Console, add your Supabase redirect URI:
-   `https://<your-project-id>.supabase.co/auth/v1/callback`
-4. In Supabase Dashboard > **Authentication** > **URL Configuration**, add your local redirect URL:
-   `http://localhost:3000/auth/callback`
-
----
-
-## 💻 Commands to Run Locally
-
+### 2. Install Dependencies
 ```bash
-# Install dependencies
 npm install
+```
 
-# Run development server (Turbopack)
+### 3. Configure Environment Variables
+Create a `.env.local` file in the root directory (refer to `.env.example`):
+
+```env
+# Supabase Authentication & PostgreSQL Database
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+
+# AI Tutor Service (Google Gemini)
+AI_PROVIDER=google
+AI_API_KEY=your-gemini-api-key
+
+# Speech & Voice AI Service (Gnani Prisma / Audio Engine)
+GNANI_API_KEY=your-gnani-api-key
+GNANI_TOKEN=your-gnani-token
+```
+
+### 4. Run the Development Server
+```bash
 npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to experience Kannada Kaliri locally.
 
-# Run strict TypeScript verification
-npx tsc --noEmit
-
-# Run ESLint check
-npm run lint
-
-# Build for production
+### 5. Run Verification & Test Suites
+```bash
+# Full Next.js production build verification
 npm run build
 
-# Start production server
-npm run start
+# ESLint inspection
+npm run lint
+
+# Security & RLS validation suite (35 automated tests)
+npx tsx tests/e2e/test-m11-security.mjs
+
+# E2E multilingual user journey suite (82 automated tests)
+npx tsx tests/e2e/runner.ts
 ```
 
 ---
 
-## 📋 Quality & Verification Summary
+## 🔒 Security, Privacy & Reliability
 
-| Check | Result |
-|---|---|
-| **TypeScript Validation** (`npx tsc --noEmit`) | ✅ 0 errors |
-| **ESLint Check** (`npm run lint`) | ✅ 0 errors, 0 warnings |
-| **Production Build** (`npm run build`) | ✅ All routes compiled successfully |
-| **Hero Background Image** (`mysore-palace.jpg`) | ✅ Authentic 2560px optimized night photo |
-| **Google OAuth Integration** | ✅ Real Supabase OAuth flow implemented |
-| **Responsive Design** | ✅ Desktop, Tablet, and Mobile verified |
+- **PKCE Code Exchange:** Zero-credential exposure during Google OAuth with SSR cookie synchronization.
+- **Row Level Security (RLS):** Every database row is isolated per authenticated learner; learners cannot inspect or tamper with peer data.
+- **Prompt Injection Defense:** Strict regex and token boundary guards prevent jailbreaks and enforce Kannada learning context.
+- **Zero Secret Leakage:** Error responses are sanitized before reaching clients; database internals and API keys are strictly redacted.
+- **Safe Dynamic Redirects:** Hardened URL sanitizer prevents open redirect phishing attacks.
+
+---
+
+## 🤝 Community & Cultural Heritage
+
+Kannada is one of India's classical languages, carrying an unbroken literary tradition spanning over 2,000 years — from the Halmidi inscriptions (450 CE) and Adikavi Pampa to the timeless Vachanas of Basavanna and 8 Jnanpith awards.
+
+Kannada Kaliri honors this heritage by building bridges of mutual respect, welcoming every newcomer to feel at home in Karnataka:
+
+<div align="center">
+
+> *"ಸಿರಿಗನ್ನಡಂ ಗೆಲ್ಗೆ, ಸಿರಿಗನ್ನಡಂ ಬಾಳ್ಗೆ"*  
+> *(May glorious Kannada triumph, may glorious Kannada prosper)*
+
+**Crafted with pride in Mysuru, Karnataka 💛❤️**
+
+[kannada-kaliri.vercel.app](https://kannada-kaliri.vercel.app/)
+
+</div>
