@@ -1,0 +1,236 @@
+/**
+ * Exercises — Module 01: Kannada Foundations
+ * Kannada Kaliri — Milestone 04
+ *
+ * Covers lessons: a1-m01-l01 (Vowels), a1-m01-l02 (Consonants), a1-m01-l03 (Greetings)
+ */
+
+import type {
+  LessonExerciseSet,
+  MultipleChoiceExercise,
+  WordMatchingExercise,
+  SentenceConstructionExercise,
+  FillInTheBlankExercise,
+  ListeningComprehensionExercise,
+  VocabularyRecallExercise,
+} from '@/lib/exercises/types';
+
+// ─── Lesson a1-m01-l01: Vowels ────────────────────────────────────────────────
+const mc1: MultipleChoiceExercise = {
+  id: 'ex-m01-l01-mc1',
+  lessonId: 'a1-m01-l01',
+  type: 'multiple_choice',
+  order: 1,
+  difficulty: 'easy',
+  points: 10,
+  instructions: 'Choose the correct meaning for the Kannada word.',
+  question: 'ಅಮ್ಮ',
+  questionTransliteration: 'Amma',
+  options: ['Mother', 'Father', 'Sister', 'Grandmother'],
+  correctAnswer: 'Mother',
+  explanation: '"ಅಮ್ಮ" (Amma) means Mother. It is one of the most universal words in South Indian languages.',
+  explanationNative: {
+    hi: '"ಅಮ್ಮ" (Amma) का अर्थ है "माँ"।',
+    ta: '"ಅಮ್ಮ" (Amma) என்பது "அம்மா" என்று பொருள்.',
+    te: '"ಅಮ್ಮ" (Amma) అంటే "అమ్మ".',
+    ml: '"ಅಮ್ಮ" (Amma) എന്നാൽ "അമ്മ" എന്നാണ് അർഥം.',
+  },
+};
+
+const mc2: MultipleChoiceExercise = {
+  id: 'ex-m01-l01-mc2',
+  lessonId: 'a1-m01-l01',
+  type: 'multiple_choice',
+  order: 2,
+  difficulty: 'easy',
+  points: 10,
+  instructions: 'What does this Kannada word mean?',
+  question: 'ಆನೆ',
+  questionTransliteration: 'Aane',
+  options: ['Tiger', 'Elephant', 'Lion', 'Horse'],
+  correctAnswer: 'Elephant',
+  explanation: '"ಆನೆ" (Aane) means Elephant. Elephants are central to Karnataka\'s Mysuru Dasara celebration.',
+  explanationNative: {
+    hi: '"ಆನೆ" (Aane) का अर्थ है "हाथी"।',
+    ta: '"ಆನೆ" (Aane) என்பது "யானை" என்று பொருள்.',
+    te: '"ಆನೆ" (Aane) అంటే "ఏనుగు".',
+    ml: '"ಆನೆ" (Aane) എന்നாൽ "ആന" എന്നർഥം.',
+  },
+};
+
+const recall1: VocabularyRecallExercise = {
+  id: 'ex-m01-l01-recall1',
+  lessonId: 'a1-m01-l01',
+  type: 'vocabulary_recall',
+  order: 3,
+  difficulty: 'easy',
+  points: 5,
+  instructions: 'Look at this Kannada word. Try to recall its meaning before revealing the answer.',
+  vocabularyId: 'v1-5',
+  kannada: 'ಇಲ್ಲಿ',
+  transliteration: 'Illi',
+  correctMeaning: 'Here',
+  nativeMeaning: { hi: 'यहाँ', ta: 'இங்கே', te: 'ఇక్కడ', ml: 'ഇവിടെ' },
+};
+
+const fill1: FillInTheBlankExercise = {
+  id: 'ex-m01-l01-fill1',
+  lessonId: 'a1-m01-l01',
+  type: 'fill_in_the_blank',
+  order: 4,
+  difficulty: 'medium',
+  points: 15,
+  instructions: 'Fill in the blank with the correct Kannada word.',
+  questionTemplate: '______ ಬನ್ನಿ (Come ______)',
+  translation: 'Come here.',
+  acceptedAnswers: ['ಇಲ್ಲಿ', 'illi', 'Illi'],
+  hint: 'The word starts with ಇ and means "here".',
+  explanation: '"ಇಲ್ಲಿ ಬನ್ನಿ" (Illi banni) means "Come here". ಇಲ್ಲಿ means "here".',
+  explanationNative: {
+    hi: '"ಇಲ್ಲಿ" का अर्थ है "यहाँ"। पूरा वाक्य: "यहाँ आइए"।',
+    ta: '"ಇಲ್ಲಿ" என்பது "இங்கே" என்று பொருள். முழு வாக்கியம்: "இங்கே வாருங்கள்".',
+    te: '"ಇಲ್ಲಿ" అంటే "ఇక్కడ". పూర్తి వాక్యం: "ఇక్కడ రండి".',
+    ml: '"ಇಲ್ಲಿ" എന്നാൽ "ഇവിടെ". വാക്യം: "ഇവിടെ വരൂ".',
+  },
+};
+
+export const module01Exercises: LessonExerciseSet[] = [
+  {
+    lessonId: 'a1-m01-l01',
+    exercises: [mc1, mc2, recall1, fill1],
+  },
+  {
+    lessonId: 'a1-m01-l02',
+    exercises: [
+      {
+        id: 'ex-m01-l02-mc1',
+        lessonId: 'a1-m01-l02',
+        type: 'multiple_choice',
+        order: 1,
+        difficulty: 'easy',
+        points: 10,
+        instructions: 'Select the correct meaning.',
+        question: 'ನಾಯಿ',
+        questionTransliteration: 'Naayi',
+        options: ['Cat', 'Dog', 'Bird', 'Cow'],
+        correctAnswer: 'Dog',
+        explanation: '"ನಾಯಿ" (Naayi) means Dog in Kannada.',
+        explanationNative: { hi: '"ನಾಯಿ" का अर्थ है "कुत्ता"।', ta: '"ನಾಯಿ" என்பது "நாய்"।', te: '"ನಾಯಿ" అంటే "కుక్క".', ml: '"ನಾಯಿ" എന്നാൽ "നായ".' },
+      } as MultipleChoiceExercise,
+      {
+        id: 'ex-m01-l02-match1',
+        lessonId: 'a1-m01-l02',
+        type: 'word_matching',
+        order: 2,
+        difficulty: 'medium',
+        points: 20,
+        instructions: 'Match each Kannada consonant-word with its English meaning.',
+        pairs: [
+          { id: 'mp1', kannada: 'ಕಣ್ಣು', transliteration: 'Kannu', meaning: 'Eye' },
+          { id: 'mp2', kannada: 'ಕೈ', transliteration: 'Kai', meaning: 'Hand' },
+          { id: 'mp3', kannada: 'ಕಾಲು', transliteration: 'Kaalu', meaning: 'Leg / Foot' },
+          { id: 'mp4', kannada: 'ಬಾಯಿ', transliteration: 'Baayi', meaning: 'Mouth' },
+        ],
+      } as WordMatchingExercise,
+      {
+        id: 'ex-m01-l02-fill1',
+        lessonId: 'a1-m01-l02',
+        type: 'fill_in_the_blank',
+        order: 3,
+        difficulty: 'medium',
+        points: 15,
+        instructions: 'Fill in the blank.',
+        questionTemplate: 'ಅವನ ______ ದೊಡ್ಡದು (His ______ is big)',
+        translation: 'His eyes are big.',
+        acceptedAnswers: ['ಕಣ್ಣು', 'kannu', 'Kannu'],
+        hint: 'The Kannada word for "eye".',
+        explanation: '"ಕಣ್ಣು" (Kannu) means Eye.',
+      } as FillInTheBlankExercise,
+    ],
+  },
+  {
+    lessonId: 'a1-m01-l03',
+    exercises: [
+      {
+        id: 'ex-m01-l03-mc1',
+        lessonId: 'a1-m01-l03',
+        type: 'multiple_choice',
+        order: 1,
+        difficulty: 'easy',
+        points: 10,
+        instructions: 'What does "ನಮಸ್ಕಾರ" mean?',
+        question: 'ನಮಸ್ಕಾರ',
+        questionTransliteration: 'Namaskara',
+        options: ['Hello / Greetings', 'Goodbye', 'Thank you', 'Please'],
+        correctAnswer: 'Hello / Greetings',
+        explanation: '"ನಮಸ್ಕಾರ" (Namaskara) is the respectful Kannada greeting equivalent to "Hello" or "Greetings". It is used at any time of day.',
+        explanationNative: {
+          hi: '"ನಮಸ್ಕಾರ" (Namaskara) का अर्थ है "नमस्ते / प्रणाम"।',
+          ta: '"ನಮಸ್ಕಾರ" (Namaskara) என்பது "வணக்கம்".',
+          te: '"ನಮಸ್ಕಾರ" (Namaskara) అంటే "నమస్కారం".',
+          ml: '"ನಮಸ್ಕಾರ" (Namaskara) എന്നാൽ "നമസ്കാരം".',
+        },
+      } as MultipleChoiceExercise,
+      {
+        id: 'ex-m01-l03-mc2',
+        lessonId: 'a1-m01-l03',
+        type: 'multiple_choice',
+        order: 2,
+        difficulty: 'easy',
+        points: 10,
+        instructions: 'How do you say "Thank you" in Kannada?',
+        question: 'Which word means "Thank you" in Kannada?',
+        options: ['ನಮಸ್ಕಾರ', 'ಧನ್ಯವಾದಗಳು', 'ಬನ್ನಿ', 'ಹೌದು'],
+        correctAnswer: 'ಧನ್ಯವಾದಗಳು',
+        explanation: '"ಧನ್ಯವಾದಗಳು" (Dhanyavadagalu) means "Thank you". It is formal and respectful.',
+        explanationNative: {
+          hi: '"ಧನ್ಯವಾದಗಳು" का अर्थ है "धन्यवाद"।',
+          ta: '"ಧನ್ಯವಾದಗಳು" என்பது "நன்றி".',
+          te: '"ಧನ್ಯವಾದಗಳು" అంటే "ధన్యవాదాలు".',
+          ml: '"ಧನ್ಯವಾದಗಳು" എന്നാൽ "നന്ദി".',
+        },
+      } as MultipleChoiceExercise,
+      {
+        id: 'ex-m01-l03-listen1',
+        lessonId: 'a1-m01-l03',
+        type: 'listening_comprehension',
+        order: 3,
+        difficulty: 'medium',
+        points: 15,
+        instructions: 'Listen to the Kannada phrase and select its meaning.',
+        audioText: 'ನೀವು ಹೇಗಿದ್ದೀರಾ',
+        audioTextTransliteration: 'Neevu hegiddira',
+        options: ['How are you?', 'Where are you going?', 'What is your name?', 'Please come in.'],
+        correctAnswer: 'How are you?',
+        explanation: '"ನೀವು ಹೇಗಿದ್ದೀರಾ?" (Neevu hegiddira?) means "How are you?" — the polite, respectful form.',
+        explanationNative: {
+          hi: '"ನೀವು ಹೇಗಿದ್ದೀರಾ?" का अर्थ है "आप कैसे हैं?"',
+          ta: '"ನೀವು ಹೇಗಿದ್ದೀರಾ?" என்பது "நீங்கள் எப்படி இருக்கிறீர்கள்?"',
+          te: '"ನೀವು ಹೇಗಿದ್ದೀರಾ?" అంటే "మీరు ఎలా ఉన్నారు?"',
+          ml: '"ನೀವು ಹೇಗಿದ್ದೀರಾ?" എന്നാൽ "സുഖമാണോ?"',
+        },
+      } as ListeningComprehensionExercise,
+      {
+        id: 'ex-m01-l03-sentence1',
+        lessonId: 'a1-m01-l03',
+        type: 'sentence_construction',
+        order: 4,
+        difficulty: 'medium',
+        points: 20,
+        instructions: 'Arrange the word tiles to form the correct Kannada sentence.',
+        wordTiles: ['ನಾನು', 'ಚೆನ್ನಾಗಿದ್ದೀನಿ', 'ಧನ್ಯವಾದಗಳು'],
+        correctSentence: 'ನಾನು ಚೆನ್ನಾಗಿದ್ದೀನಿ ಧನ್ಯವಾದಗಳು',
+        translation: 'I am doing well, thank you.',
+        transliteration: 'Naanu chennagiddini dhanyavadagalu',
+        explanation: 'In Kannada, the subject (ನಾನು) comes first, then the predicate (ಚೆನ್ನಾಗಿದ್ದೀನಿ), then the expression (ಧನ್ಯವಾದಗಳು).',
+        explanationNative: {
+          hi: 'कन्नड़ में: मैं (ನಾನು) + ठीक हूँ (ಚೆನ್ನಾಗಿದ್ದೀನಿ) + धन्यवाद (ಧನ್ಯವಾದಗಳು)।',
+          ta: 'கன்னடத்தில்: நான் (ನಾನು) + நலமாக இருக்கிறேன் (ಚೆನ್ನಾಗಿದ್ದೀನಿ) + நன்றி (ಧನ್ಯವಾದಗಳು).',
+          te: 'కన్నడలో: నేను (ನಾನು) + బాగున్నాను (ಚೆನ್ನಾಗಿದ್ದೀನಿ) + ధన్యవాదాలు (ಧನ್ಯವಾದಗಳು).',
+          ml: 'കന്നഡയിൽ: ഞാൻ (ನಾನು) + സുഖമാണ് (ಚೆನ್ನಾಗಿದ್ದೀನಿ) + നന്ദി (ಧನ್ಯವಾದಗಳು).',
+        },
+      } as SentenceConstructionExercise,
+    ],
+  },
+];
+
